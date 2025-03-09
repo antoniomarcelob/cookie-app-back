@@ -1,0 +1,9 @@
+services:
+  taskcin-db:
+    image: bitnami/postgresql
+    environment:
+      - POSTGRES_DATABASE=taskcin
+      - POSTGRES_USERNAME=docker
+      - POSTGRES_PASSWORD=docker
+    ports:
+      - 5431:5432
