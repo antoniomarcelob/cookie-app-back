@@ -3,7 +3,7 @@ import { UnauthorizedError } from "../../use-cases/Errors/unauthorized-error";
 
 export default async function ProfileController(request: FastifyRequest, reply: FastifyReply) {
   try {
-    let token = request.cookies.accessToken;
+    let token = request.headers.authorization
 
     if (!token) {
       return reply.status(401).send({ message: "Usuário não autenticado" });
